@@ -16,7 +16,7 @@
     {
       "title": "Weevu",
       "description": "Detect and fix web vulnerabilities before attackers do with instant security scans.",
-      "url": "https://weevu.imronaldmendoza.com",
+      "url": "https://imronaldmendoza.com/projects/Weevu",
       "icon": "fas fa-shield-virus",
       "tags": ["CyberSec"],
       "ratingConfig": {
@@ -68,7 +68,7 @@
     {
       "title": "Loanatic",
       "description": "Real-time amortization schedules and financial summaries for debt-tracking.",
-      "url": "https://loanatic.imronaldmendoza.com",
+      "url": "https://imronaldmendoza.com/Projects/loanatic",
       "icon": "fas fa-hand-holding-usd",
       "tags": ["Fintech"],
       "ratingConfig": {
