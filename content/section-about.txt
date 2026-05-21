@@ -1,0 +1,26 @@
+{
+  "mainDetails": "Currently, I am working as a <span class='text-white font-bold border-b-2 border-blue-500/30'>Mid-Level Web Developer</span> in an international BPO company. My professional journey is driven by a passion for building robust and scalable web solutions. In my current role, I focus on empowering our support team by developing specialized tools that <span class='text-blue-400 font-medium'>automate payroll processing</span>, including complex computations and report generation.",
+  "additionalDetails": "I am also spearheading a project that leverages <span class='text-blue-400 font-medium font-bold'>UiPath bots and Document Understanding</span> to streamline data extraction and processing. In my free time, I immerse myself in <span class='text-blue-400 font-medium'>AI research and exploring emerging programming paradigms</span>. I believe that staying ahead of the curve is the key to creating impactful technology.",
+  "beyondTheCode": [
+    {
+      "title": "Endurance Running",
+      "description": "Fun run participant and finisher",
+      "icon": "fas fa-running"
+    },
+    {
+      "title": "Competitive Racing",
+      "description": "Tamiya Mini 4WD & RC tournament player",
+      "icon": "fas fa-trophy"
+    },
+    {
+      "title": "Pickleball",
+      "description": "Active court player and enthusiast",
+      "icon": "fas fa-table-tennis"
+    },
+    {
+      "title": "Coffee Craft",
+      "description": "Amateur barista and manual brewing",
+      "icon": "fas fa-mug-hot"
+    }
+  ]
+}

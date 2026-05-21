@@ -1,0 +1,50 @@
+[03-Sep-2025 02:43:35 UTC] Home directory set to: /home/z04fl6wg5ng7
+[03-Sep-2025 02:43:35 UTC] Binary directory: /home/z04fl6wg5ng7/bin, Manager path: /home/z04fl6wg5ng7/bin/ssl-manager
+[03-Sep-2025 02:43:35 UTC] API Base URL: https://externalautossl.service.spaceship.com/api/v1/externalautossl/user
+[03-Sep-2025 02:43:35 UTC] Download URL: https://ssl-manager.s3.amazonaws.com/bin/ssl-manager
+[03-Sep-2025 02:43:38 UTC] Home directory set to: /home/z04fl6wg5ng7
+[03-Sep-2025 02:43:38 UTC] Binary directory: /home/z04fl6wg5ng7/bin, Manager path: /home/z04fl6wg5ng7/bin/ssl-manager
+[03-Sep-2025 02:43:38 UTC] API Base URL: https://externalautossl.service.spaceship.com/api/v1/externalautossl/user
+[03-Sep-2025 02:43:38 UTC] Download URL: https://ssl-manager.s3.amazonaws.com/bin/ssl-manager
+[03-Sep-2025 02:43:38 UTC] Action received: install
+[03-Sep-2025 02:43:38 UTC] Install action initiated.
+[03-Sep-2025 02:43:38 UTC] Created bin directory: /home/z04fl6wg5ng7/bin
+[03-Sep-2025 02:43:38 UTC] Downloading manager binary from https://ssl-manager.s3.amazonaws.com/bin/ssl-manager
+[03-Sep-2025 02:43:38 UTC] Trying file_get_contents method
+[03-Sep-2025 02:43:39 UTC] Downloaded manager binary using file_get_contents
+[03-Sep-2025 02:43:39 UTC] Manager installed successfully.
+[03-Sep-2025 02:43:39 UTC] Fetching manager info.
+[03-Sep-2025 02:43:39 UTC] Running command: /home/z04fl6wg5ng7/bin/ssl-manager info 2>/dev/null
+[03-Sep-2025 02:43:39 UTC] Manager info: Error: Could not get control panel credentials
+{"error": "Error: panel credentials not found"}
+
+[03-Sep-2025 02:43:43 UTC] Home directory set to: /home/z04fl6wg5ng7
+[03-Sep-2025 02:43:43 UTC] Binary directory: /home/z04fl6wg5ng7/bin, Manager path: /home/z04fl6wg5ng7/bin/ssl-manager
+[03-Sep-2025 02:43:43 UTC] API Base URL: https://externalautossl.service.spaceship.com/api/v1/externalautossl/user
+[03-Sep-2025 02:43:43 UTC] Download URL: https://ssl-manager.s3.amazonaws.com/bin/ssl-manager
+[03-Sep-2025 02:43:43 UTC] Action received: register
+[03-Sep-2025 02:43:43 UTC] Running command: /home/z04fl6wg5ng7/bin/ssl-manager register -t 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjFkNmlmTUlzRlpTcU5GTzdkWDBkeTltanBqX21qX1NnZ084bng2ektQTHcifQ.eyJpc3MiOiJodHRwczovL2V4dGVybmFsYXV0b3NzbC5zZXJ2aWNlLnNwYWNlc2hpcC5jb20iLCJuYmYiOjE3NTY4NjcxNjIsImlhdCI6MTc1Njg2NzE2MiwiZXhwIjoxNzU2OTUzNTYyLCJhdWQiOlsiZXh0ZXJuYWxhdXRvc3NsIl0sInNjb3BlIjpbImV4dGVybmFsYXV0b3NzbC5leHRlcm5hbGF1dG9zc2wiLCJleHRlcm5hbGF1dG9zc2wudXNlci1pbnRlZ3JhdGlvbi1jcmVhdGUiXSwiY2xpZW50X2lkIjoiZXh0ZXJuYWwtc3NsLWNsaWVudCIsInN1YiI6ImQ0YzdmMzRkLTY1ZjgtNDE5Ny05YjQ3LWEzZmRlMWU5OWQ1NyJ9.0delJqOL3774lJT0gKFG_36vcogHtm2tYpnVePQmRL2LdvWj-Ttks-CObQB2n7IFGYrN0aO8ZW5siSSjk7fi2MMbH476Rz4Ol84np1A8kHkHoYWJi6fA6D6QAzaaPibTRwtJwf4U63P0JqkLcD86qJXy-TRtoUsMSCIzswe-3z4GICAp3Suq8BRFzD66JbNpaHASUThnOUXAzxaCg6uQtLceYhNwgQ50yKhkYn0G1JZGbII3vEZ1y60AnxyZ4iB3FaS0Sc-xUrvwtad65F4r0Ybc0NLm-6TxEOOqBpEAEYs-lPH-csVdsGyu-hUnz8eWD-tP_xhe-dBimtMlZx06SQ' -u 'https://externalautossl.service.spaceship.com/api/v1/externalautossl/user/' 2>&1
+[03-Sep-2025 02:43:46 UTC] Registration output: Installing certificate manager
+Vendor registered successfully
+Integrated with control panel successfully
+Setting up cron job
+
+[03-Sep-2025 02:43:46 UTC] Fetching manager info.
+[03-Sep-2025 02:43:46 UTC] Running command: /home/z04fl6wg5ng7/bin/ssl-manager info 2>/dev/null
+[03-Sep-2025 02:43:46 UTC] Manager info: Control panel credentials found
+Vendor credentials found
+Manager is ready
+
+[03-Sep-2025 02:44:04 UTC] Home directory set to: /home/z04fl6wg5ng7
+[03-Sep-2025 02:44:04 UTC] Binary directory: /home/z04fl6wg5ng7/bin, Manager path: /home/z04fl6wg5ng7/bin/ssl-manager
+[03-Sep-2025 02:44:04 UTC] API Base URL: https://externalautossl.service.spaceship.com/api/v1/externalautossl/user
+[03-Sep-2025 02:44:04 UTC] Download URL: https://ssl-manager.s3.amazonaws.com/bin/ssl-manager
+[03-Sep-2025 02:44:04 UTC] Action received: remove_installer
+[03-Sep-2025 02:44:04 UTC] Fetching manager info.
+[03-Sep-2025 02:44:04 UTC] Running command: /home/z04fl6wg5ng7/bin/ssl-manager info 2>/dev/null
+[03-Sep-2025 02:44:04 UTC] Manager info: Control panel credentials found
+Vendor credentials found
+Manager is ready
+
+[03-Sep-2025 02:44:04 UTC] Remove installer action initiated.
+[03-Sep-2025 02:44:04 UTC] Installer file removed.

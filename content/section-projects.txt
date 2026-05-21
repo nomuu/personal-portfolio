@@ -1,0 +1,148 @@
+{
+  "featured": [
+    {
+      "title": "Mockify",
+      "description": "Prepare for real-world interviews by practicing your own questions on your terms.",
+      "url": "https://mockify.imronaldmendoza.com",
+      "icon": "fas fa-microphone-alt",
+      "tags": ["AI / Career"],
+      "ratingConfig": {
+        "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRr9ArWHJOvGWygyhXLOFtM69qWvvNJJqfRr96mzyeWJSy8_BytsraDu6JlDEtCz_1TQpB-d0S96v0N/pub?output=csv",
+        "formBaseUrl": "https://docs.google.com/forms/d/e/1FAIpQLScaWp-u2Sf7XP4f7UYr_jjHRijzqO5hooBdzKmNwyC4F477eA/viewform",
+        "entryRating": "1766318363",
+        "entryRemark": "386077949"
+      }
+    },
+    {
+      "title": "Weevu",
+      "description": "Detect and fix web vulnerabilities before attackers do with instant security scans.",
+      "url": "https://weevu.imronaldmendoza.com",
+      "icon": "fas fa-shield-virus",
+      "tags": ["CyberSec"],
+      "ratingConfig": {
+        "csvUrl": "LINK_HERE",
+        "formBaseUrl": "LINK_HERE",
+        "entryRating": "ID_HERE",
+        "entryRemark": "ID_HERE"
+      }
+    },
+    {
+      "title": "GitSet",
+      "description": "Universal version control for RC chassis setups with encrypted data exports.",
+      "url": "https://imronaldmendoza.com/Projects/Gitset",
+      "icon": "fas fa-cogs",
+      "tags": ["RC Tech / Hobby"],
+      "ratingConfig": {
+        "csvUrl": "LINK_HERE",
+        "formBaseUrl": "LINK_HERE",
+        "entryRating": "ID_HERE",
+        "entryRemark": "ID_HERE"
+      }
+    },
+    {
+      "title": "Inventrac",
+      "description": "Platform for product monitoring and industry regulation compliance.",
+      "url": "https://imronaldmendoza.com/Projects/Inventrac",
+      "icon": "fas fa-boxes",
+      "tags": ["Inventory"],
+      "ratingConfig": {
+        "csvUrl": "LINK_HERE",
+        "formBaseUrl": "LINK_HERE",
+        "entryRating": "ID_HERE",
+        "entryRemark": "ID_HERE"
+      }
+    },
+    {
+      "title": "Photopify",
+      "description": "Converts images locally in your browser using hardware acceleration—no uploads.",
+      "url": "https://imronaldmendoza.com/Projects/Photopify",
+      "icon": "fas fa-camera-retro",
+      "tags": ["Privacy"],
+      "ratingConfig": {
+        "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTeYTDzwSTiJFQYAPiLgXo7KToxemxHe7zjHdvIaXw-Bv-Zw0iM5IYdBmGKoLLQVXA_1HLvfG8ynzS/pub?output=csv",
+        "formBaseUrl": "https://docs.google.com/forms/d/e/1FAIpQLSd5auAkJHdifDb9PdEeswaYx3GCFqWPcSMAAAd1DFf68xTUaw/viewform",
+        "entryRating": "1766318363",
+        "entryRemark": "386077949"
+      }
+    },
+    {
+      "title": "Loanatic",
+      "description": "Real-time amortization schedules and financial summaries for debt-tracking.",
+      "url": "https://loanatic.imronaldmendoza.com",
+      "icon": "fas fa-hand-holding-usd",
+      "tags": ["Fintech"],
+      "ratingConfig": {
+        "csvUrl": "LINK_HERE",
+        "formBaseUrl": "LINK_HERE",
+        "entryRating": "ID_HERE",
+        "entryRemark": "ID_HERE"
+      }
+    }
+  ],
+  "others": [
+    {
+      "title": "All Codes",
+      "description": "Count lines of code in your project files across multiple languages.",
+      "url": "https://imronaldmendoza.com/Projects/Allcodes/home.html",
+      "icon": "fas fa-file-code",
+      "ratingConfig": { "csvUrl": "LINK_HERE", "formBaseUrl": "LINK_HERE", "entryRating": "ID_HERE", "entryRemark": "ID_HERE" }
+    },
+    {
+      "title": "Beaniria",
+      "description": "Sleek online presence for a premium coffee bean shop.",
+      "url": "https://beaniria.my.canva.site/beaniria",
+      "icon": "fas fa-coffee",
+      "ratingConfig": { "csvUrl": "LINK_HERE", "formBaseUrl": "LINK_HERE", "entryRating": "ID_HERE", "entryRemark": "ID_HERE" }
+    },
+    {
+      "title": "vsTECH",
+      "description": "Full-stack web application built with PHP and Bootstrap.",
+      "url": "#",
+      "icon": "fas fa-laptop-code",
+      "ratingConfig": { "csvUrl": "LINK_HERE", "formBaseUrl": "LINK_HERE", "entryRating": "ID_HERE", "entryRemark": "ID_HERE" }
+    },
+    {
+      "title": "JSONate",
+      "description": "Excel to JSON dataset converter using JavaScript.",
+      "url": "https://imronaldmendoza.com/Projects/JSONate",
+      "icon": "fas fa-database",
+      "ratingConfig": { "csvUrl": "LINK_HERE", "formBaseUrl": "LINK_HERE", "entryRating": "ID_HERE", "entryRemark": "ID_HERE" }
+    },
+    {
+      "title": "Fast Forward",
+      "description": "Responsive logistics landing page with smooth animations.",
+      "url": "https://fastforwardfreight.ph",
+      "icon": "fas fa-truck-fast",
+      "ratingConfig": {
+        "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQwcHBM3t-hTcfmkPallvr6iAHqWwoFTvn7DuUdKB-HB7bRj5jmOyVmhmg-MoZGPfSqnzIgFb5RcjnJ/pub?output=csv",
+        "formBaseUrl": "https://docs.google.com/forms/d/e/1FAIpQLScBxBOXVzxuvTsFSOkdSqwEcbzfUJGpEpjbr9SQBI0XvCaveg/viewform",
+        "entryRating": "1766318363",
+        "entryRemark": "386077949"
+      }
+    },
+    {
+      "title": "Markipify",
+      "description": "Diagonal watermark security tool for media protection.",
+      "url": "https://imronaldmendoza.com/Projects/Markipify",
+      "icon": "fas fa-file-signature",
+      "ratingConfig": {
+        "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT2JLTUt9WmGpcW69J57eKDpB-k2hwUb1Sd-Q2oxWvX3pDgYFt8NtF8E2cHy3RN0AcaZBj0HB2IaYIa/pub?output=csv",
+        "formBaseUrl": "https://docs.google.com/forms/d/e/1FAIpQLSf4CdoZCeqT5dMTSKjfuJzrq5Q9Y1_LfF-MtN9jdPuJ79T3Bw/viewform",
+        "entryRating": "1130541740",
+        "entryRemark": "1565551229"
+      }
+    },
+    {
+      "title": "Time Keeper",
+      "description": "Efficiently log and manage time, track hours, and generate reports using VB.NET.",
+      "url": "#",
+      "icon": "fas fa-clock",
+      "ratingConfig": {
+        "csvUrl": "LINK_HERE",
+        "formBaseUrl": "LINK_HERE",
+        "entryRating": "ID_HERE",
+        "entryRemark": "ID_HERE"
+      }
+    }
+  ]
+}

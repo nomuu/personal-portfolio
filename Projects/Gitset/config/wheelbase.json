@@ -1,0 +1,11 @@
+[
+    { "label": "210mm (Short / M-Chassis)", "value": "210" },
+    { "label": "225mm (Medium / M-Chassis)", "value": "225" },
+    { "label": "239mm (Long / M-Chassis)", "value": "239" },
+    { "label": "257mm (Standard 1/10 Touring)", "value": "257" },
+    { "label": "270mm (F1 / Long Touring)", "value": "270" },
+    { "label": "313mm (Standard 1/10 Crawler)", "value": "313" },
+    { "label": "324mm (Long Crawler / TRX4)", "value": "324" },
+    { "label": "330mm (1/8 GT / Buggy)", "value": "330" },
+    { "label": "Custom / Other", "value": "Custom" }
+]

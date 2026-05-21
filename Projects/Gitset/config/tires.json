@@ -1,0 +1,16 @@
+[
+    { "label": "Tamiya M-Grip (60D)", "value": "T-60D-M" },
+    { "label": "Tamiya S-Grip (60D)", "value": "T-60D-S" },
+    { "label": "Tamiya Super Radial (Hard)", "value": "T-SR-H" },
+    { "label": "Tamiya Super Radial (Soft)", "value": "T-SR-S" },
+    { "label": "Rush 24X (Premium Grip)", "value": "R-24X" },
+    { "label": "Rush 36X (Standard Grip)", "value": "R-36X" },
+    { "label": "Sorex 28R (Medium)", "value": "S-28R" },
+    { "label": "Sorex 32R (Medium-Hard)", "value": "S-32R" },
+    { "label": "Sweep 24R (Indoor/Carpet)", "value": "SW-24R" },
+    { "label": "Sweep 32R (Outdoor/Asphalt)", "value": "SW-32R" },
+    { "label": "Ride Re-32 (Standard Belted)", "value": "RI-32" },
+    { "label": "Pit Shimizu PS-0570 (S-Grip)", "value": "PS-570" },
+    { "label": "Volante 28R (Standard)", "value": "V-28R" },
+    { "label": "Custom / Hand-cut", "value": "Custom" }
+]

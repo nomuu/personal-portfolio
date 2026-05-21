@@ -1,0 +1,10 @@
+[
+    { "label": "Tamiya LF Battery LF2200-6.6V", "value": "Tamiya-LF2200" },
+    { "label": "Tamiya Ni-Cd 7.2V Custom Pack", "value": "Tamiya-NiCd" },
+    { "label": "Tamiya Racing Pack 1600SP", "value": "Tamiya-1600SP" },
+    { "label": "Sunpadow 2S LiPo (Shorty)", "value": "Sunpadow-2S" },
+    { "label": "Gens Ace 2S LiPo (Standard)", "value": "GensAce-2S" },
+    { "label": "Intellect LiHV 2S", "value": "Intellect-2S" },
+    { "label": "Yokomo Racing LiPo", "value": "Yokomo-LiPo" },
+    { "label": "Custom / Ni-MH Pack", "value": "Custom-NiMH" }
+]

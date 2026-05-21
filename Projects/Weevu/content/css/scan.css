@@ -1,0 +1,17 @@
+    /* Pulse animation for the sparkle emoji */
+    @keyframes pulse {
+        0%, 100% { transform: translateY(-50%) scale(1); opacity: 1; }
+        50% { transform: translateY(-50%) scale(1.2); opacity: 0.7; }
+    }
+
+    /* Button hover effect */
+    .btn-primary:hover {
+        background-color: #1565c0 !important;
+        box-shadow: 0 0 12px rgba(21, 101, 192, 0.7);
+        transition: all 0.3s ease;
+    }
+    .btn-outline-primary:hover {
+        background-color: #e3f2fd;
+        color: #1565c0 !important;
+        transition: all 0.3s ease;
+    }

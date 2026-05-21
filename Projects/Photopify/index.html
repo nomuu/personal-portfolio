@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icon.png" type="image/png">
+    <title>Photopify | Image Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+        }
+        body {
+            background-color: var(--bg-color);
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        header, main, section {
+            position: relative;
+            z-index: 10;
+        }
+        #bgCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-6 text-white">
+
+    <canvas id="bgCanvas"></canvas>
+    
+    <header class="text-center mt-10 mb-10 flex flex-col items-center gap-4">
+        <img src="images/logo.png" alt="Photopify Logo" class="w-48 h-auto drop-shadow-[0_0_20px_rgba(59,130,246,0.5)]">
+        <p class="text-slate-400 font-medium tracking-wide animate-pulse">The easiest way to change your image format.</p>
+    </header>
+
+    <main class="card w-full max-w-lg glass-card shadow-2xl overflow-hidden border border-white/10 mb-12">
+        <div class="card-body p-8">
+            
+            <div id="dropZone" class="group border-2 border-dashed border-primary/30 rounded-3xl p-12 text-center hover:border-primary transition-all cursor-pointer bg-base-100/20">
+                <input type="file" id="fileInput" accept="image/webp, image/png, image/jpeg" class="hidden">
+                <div class="flex flex-col items-center gap-4">
+                    <div class="p-4 bg-primary/10 rounded-full group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xl font-bold">Drop your image here</p>
+                        <p class="text-sm opacity-50 mt-1">or click to browse</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="processArea" class="hidden space-y-6">
+                <div class="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5">
+                    <div id="previewContainer" class="w-20 h-20 rounded-lg overflow-hidden bg-black/20">
+                        <img id="miniPreview" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <p id="fileName" class="font-bold truncate max-w-[200px]">image.webp</p>
+                        <p class="text-xs opacity-50">Ready to convert</p>
+                    </div>
+                </div>
+
+                <div class="form-control w-full">
+                    <label class="label">
+                        <span class="label-text text-xs font-bold uppercase tracking-widest text-primary">Target Format</span>
+                    </label>
+                    <select id="formatSelect" class="select select-bordered bg-base-200">
+                        <option value="image/jpeg">JPG (Standard)</option>
+                        <option value="image/png">PNG (Lossless/Transparent)</option>
+                        <option value="image/webp">WebP (Modern/Small)</option>
+                    </select>
+                </div>
+                
+                <div id="qualityControl" class="flex flex-col gap-2">
+                    <label class="text-xs font-bold uppercase tracking-widest text-primary">Output Quality</label>
+                    <input type="range" min="1" max="100" value="90" class="range range-primary range-sm" id="qualityRange" />
+                </div>
+
+                <button id="convertBtn" class="btn btn-primary btn-block text-lg shadow-lg shadow-primary/20">
+                    Convert Now
+                </button>
+            </div>
+
+            <div id="resultArea" class="hidden text-center space-y-4">
+                <div class="py-4">
+                    <div class="inline-flex p-3 bg-success/20 rounded-full mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold">Perfectly Styled!</h3>
+                </div>
+                <a id="downloadLink" class="btn btn-success btn-block text-lg text-white font-bold">Download File</a>
+                <button onclick="location.reload()" class="btn btn-ghost btn-sm opacity-50 hover:opacity-100">Convert another one</button>
+            </div>
+        </div>
+    </main>
+
+
+    <section class="w-full max-w-4xl px-4 pb-20">
+        <div class="divider mb-10 text-white uppercase tracking-[0.3em] text-xs font-bold">About Photopify</div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-card p-6 rounded-3xl border border-white/5 flex flex-col gap-3">
+                <div class="text-primary bg-primary/10 w-fit p-3 rounded-2xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <h4 class="font-bold text-lg">100% Private</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">Unlike other sites, your images are never sent to a server. Everything happens locally on your machine.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl border border-white/5 flex flex-col gap-3">
+                <div class="text-secondary bg-secondary/10 w-fit p-3 rounded-2xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4" />
+                    </svg>
+                </div>
+                <h4 class="font-bold text-lg">Multi-Format</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">Easily switch between JPG, PNG, and WebP. Perfect for web developers and social media creators.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-3xl border border-white/5 flex flex-col gap-3">
+                <div class="text-accent bg-accent/10 w-fit p-3 rounded-2xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h4 class="font-bold text-lg">Fast Processing</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">Zero upload time. Photopify uses your browser's hardware acceleration for instant results.</p>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center glass-card p-8 rounded-3xl border border-white/5 max-w-2xl mx-auto">
+            <h3 class="text-xl font-bold mb-4">Why use Photopify?</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+                Most online image converters store your files or sell your data. Photopify was built with a "Privacy First" philosophy. By using the HTML5 Canvas API, we ensure that your creative assets remain yours and yours alone.
+            </p>
+        </div>
+    </section>
+
+    <section class="w-full max-w-4xl px-4 pb-24">
+        <div class="divider mb-10 text-white uppercase tracking-[0.3em] text-xs font-bold">The Developer</div>
+        
+        <div class="glass-card p-10 rounded-[3rem] border border-white/10 flex flex-col md:flex-row items-center gap-10 max-w-3xl mx-auto">
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative w-40 h-40 rounded-full overflow-hidden border-4 border-white/10 profile-glow">
+                    <img src="images/profile.png" alt="Ronald Fernandez Mendoza" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+            </div>
+            
+            <div class="text-center md:text-left space-y-4">
+                <div>
+                    <h2 class="text-3xl font-black tracking-tight text-white mb-1">Ronald Fernandez Mendoza</h2>
+                    <p class="text-primary font-bold tracking-widest text-xs uppercase">Programmer & Web Developer</p>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed max-w-md">
+                    Passionate about building lightweight, privacy-focused web tools. Photopify is a project created to help people easily change the format of their images without relying on heavy software or risky cloud uploads.
+                </p>
+                <div class="pt-2">
+                    <a href="https://imronaldmendoza.com" target="_blank" class="btn btn-outline btn-primary btn-sm rounded-full px-8 hover:shadow-lg transition-all">
+                        View Portfolio
+                    </a>
+                </div>
+            </div>
+        </div>
+   </section>
+
+    <canvas id="canvas" class="hidden"></canvas>
+
+<script>
+// --- DYNAMIC DIRECTIONAL FLIP GRID LOGIC ---
+const bgCanvas = document.getElementById('bgCanvas');
+const bgCtx = bgCanvas.getContext('2d');
+let width, height, rows, cols;
+const cellSize = 50; 
+const mouse = { x: -1000, y: -1000 };
+
+function resize() {
+    width = bgCanvas.width = window.innerWidth;
+    height = bgCanvas.height = window.innerHeight;
+    cols = Math.ceil(width / cellSize);
+    rows = Math.ceil(height / cellSize);
+}
+
+window.addEventListener('resize', resize);
+window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+});
+
+function drawBackground() {
+    bgCtx.clearRect(0, 0, width, height);
+    
+    for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+            const x = i * cellSize;
+            const y = j * cellSize;
+            const centerX = x + cellSize / 2;
+            const centerY = y + cellSize / 2;
+            
+            const dx = mouse.x - centerX;
+            const dy = mouse.y - centerY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            const maxDist = 200; // Radius of interaction
+
+            let scaleX = 1;
+            let opacity = 0.03;
+            let color = '255, 255, 255';
+
+            if (dist < maxDist) {
+                const effectStrength = 1 - (dist / maxDist);
+                
+                // DIRECTIONAL LOGIC:
+                // Normalize dx to get a value between -1 and 1
+                // This determines if the square "squashes" left or right
+                const directionFactor = dx / maxDist; 
+                scaleX = 1 - (Math.abs(directionFactor) * effectStrength * 2);
+                
+                opacity = 0.05 + (effectStrength * 0.4);
+                color = '59, 130, 246'; // Primary blue
+            }
+
+            bgCtx.save();
+            bgCtx.translate(centerX, centerY);
+            bgCtx.scale(scaleX, 1); // Flips based on mouse offset
+            
+            bgCtx.strokeStyle = `rgba(${color}, ${opacity})`;
+            bgCtx.lineWidth = 1;
+            
+            // Draw square
+            bgCtx.strokeRect(-cellSize/2 + 3, -cellSize/2 + 3, cellSize - 6, cellSize - 6);
+            
+            // Add a subtle fill for the "active" squares
+            if (dist < maxDist) {
+                bgCtx.fillStyle = `rgba(${color}, ${opacity * 0.2})`;
+                bgCtx.fillRect(-cellSize/2 + 3, -cellSize/2 + 3, cellSize - 6, cellSize - 6);
+            }
+            
+            bgCtx.restore();
+        }
+    }
+    requestAnimationFrame(drawBackground);
+}
+
+resize();
+requestAnimationFrame(drawBackground);
+
+        // --- ORIGINAL CONVERTER LOGIC ---
+        const fileInput = document.getElementById('fileInput');
+        const dropZone = document.getElementById('dropZone');
+        const processArea = document.getElementById('processArea');
+        const convertBtn = document.getElementById('convertBtn');
+        const resultArea = document.getElementById('resultArea');
+        const downloadLink = document.getElementById('downloadLink');
+        const qualityRange = document.getElementById('qualityRange');
+        const formatSelect = document.getElementById('formatSelect');
+        const qualityControl = document.getElementById('qualityControl');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        formatSelect.onchange = () => {
+            qualityControl.style.display = formatSelect.value === 'image/png' ? 'none' : 'flex';
+        };
+
+        dropZone.onclick = () => fileInput.click();
+
+        fileInput.onchange = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                document.getElementById('fileName').textContent = file.name;
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    document.getElementById('miniPreview').src = event.target.result;
+                    dropZone.classList.add('hidden');
+                    processArea.classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        };
+
+        convertBtn.onclick = () => {
+            const file = fileInput.files[0];
+            const targetFormat = formatSelect.value;
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const img = new Image();
+                img.onload = () => {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    if (targetFormat === 'image/jpeg') {
+                        ctx.fillStyle = "#FFFFFF";
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    }
+                    ctx.drawImage(img, 0, 0);
+                    const quality = qualityRange.value / 100;
+                    const resultUrl = canvas.toDataURL(targetFormat, quality);
+                    const ext = targetFormat.split('/')[1];
+                    downloadLink.href = resultUrl;
+                    downloadLink.download = `photopify-${Date.now()}.${ext}`;
+                    downloadLink.textContent = `Download ${ext.toUpperCase()}`;
+                    processArea.classList.add('hidden');
+                    resultArea.classList.remove('hidden');
+                    resultArea.scrollIntoView({ behavior: 'smooth' });
+                };
+                img.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+        };
+    </script>
+</body>
+</html>

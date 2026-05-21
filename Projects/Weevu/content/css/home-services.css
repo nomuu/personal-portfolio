@@ -1,0 +1,94 @@
+#home-services .home-services-atm-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 2rem;
+  color: #fff;
+  height: 260px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#home-services .home-services-atm-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 150px;
+  background-image: url('images/icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+#home-services .home-services-atm-card.standard {
+  background: linear-gradient(135deg, #3f79c0, #355ea0);
+}
+
+#home-services .home-services-atm-card.premium {
+  background: linear-gradient(135deg, #d4af37, #b89525);
+}
+
+#home-services .home-services-atm-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+#home-services .home-services-atm-card.active {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.6);
+}
+
+#home-services .card-header {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#home-services .brand-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+#home-services .service-level {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#home-services .card-bottom {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2rem;
+}
+
+#home-services .price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+#home-services .price small {
+  font-size: 0.85rem;
+  font-weight: normal;
+  color: #fff;
+  opacity: 0.8;
+  display: block;
+  margin-top: 0;
+}
+#home-services .service-name {
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin-top: 0.25rem;
+  color: #fff;
+}

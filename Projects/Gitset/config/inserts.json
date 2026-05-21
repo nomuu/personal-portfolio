@@ -1,0 +1,19 @@
+[
+    { "label": "No Insert (Raw Tire)", "value": "None" },
+    { "label": "Tamiya Soft Sponge (Yellow) - 53113", "value": "T-Soft-Yel" },
+    { "label": "Tamiya Medium Sponge (Blue) - 53114", "value": "T-Med-Blu" },
+    { "label": "Tamiya Hard Sponge (Black) - 53115", "value": "T-Hard-Blk" },
+    { "label": "Tamiya M-Chassis Shaped Inner (Soft/Red) - 53254", "value": "T-M-Soft" },
+    { "label": "Tamiya M-Chassis Shaped Inner (Hard/Blue) - 53255", "value": "T-M-Hard" },
+    { "label": "Tamiya M-Chassis Shaped Inner (Super Hard/Green) - 53434", "value": "T-M-SH" },
+    { "label": "Tamiya Touring Car Shaped Inner (Hard/Blue) - 53435", "value": "T-TC-Hard" },
+    { "label": "Tamiya Touring Car Shaped Inner (Medium/Yellow) - 53434", "value": "T-TC-Med" },
+    { "label": "Sweep M-Chassis Pink (Medium)", "value": "SW-Pink" },
+    { "label": "Sweep M-Chassis Blue (Hard)", "value": "SW-Blue" },
+    { "label": "Sweep M-Chassis Black (Super Hard)", "value": "SW-Black" },
+    { "label": "Rush Precision Molded (Red/Hard)", "value": "R-Red" },
+    { "label": "Rush Precision Molded (Silver/Medium)", "value": "R-Silver" },
+    { "label": "Yokomo 037M (Medium Molded)", "value": "Y-037M" },
+    { "label": "Muchmore Racing Molded (Blue)", "value": "MM-Blue" },
+    { "label": "Custom / Open Cell Foam", "value": "Custom" }
+]

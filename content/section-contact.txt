@@ -1,0 +1,19 @@
+{
+  "greeting": "Hello Visitors!",
+  "description": "I’m always open to discussing my projects, receiving feedback, or exploring new opportunities. I look forward to connecting with you!",
+  "email": "mypersonal@imronaldmendoza.com",
+  "location": "Makati City, Philippines",
+  "languages": ["Pilipino", "English"],
+  "socials": [
+    {
+      "platform": "facebook",
+      "url": "https://facebook.com/446046595495367",
+      "icon": "fab fa-facebook"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/imronaldmendoza",
+      "icon": "fab fa-linkedin"
+    }
+  ]
+}

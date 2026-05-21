@@ -1,0 +1,51 @@
+# Referrer Policy
+Header set Referrer-Policy "no-referrer-when-downgrade"
+
+# Permissions Policy
+Header set Permissions-Policy "geolocation=(self), microphone=*"
+
+# Content Security Policy
+Header set Content-Security-Policy "img-src * data:"
+
+# HTTP Strict Transport Security (HSTS)
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+# X-Content-Type-Options
+Header set X-Content-Type-Options "nosniff"
+
+# X-Frame-Options
+Header set X-Frame-Options "DENY"
+
+# X-XSS-Protection
+Header set X-XSS-Protection "1; mode=block"
+
+# Enable GZIP
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+</IfModule>
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# FORCE HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Block direct access to file types unless it's from your own domain
+# Allow the main domain and all subdomains
+RewriteCond %{HTTP_REFERER} !^https://([^/]+\.)?imronaldmendoza\.com [NC]
+RewriteRule \.(zip|png|jpg|jpeg|docx|mp4)$ - [F,NC]
+</IfModule>
+
+
+ErrorDocument 400 /errorpage.php
+ErrorDocument 401 /errorpage.php
+ErrorDocument 403 /errorpage.php
+ErrorDocument 404 /errorpage.php
+ErrorDocument 405 /errorpage.php
+ErrorDocument 408 /errorpage.php
+ErrorDocument 500 /errorpage.php
+ErrorDocument 502 /errorpage.php
+ErrorDocument 503 /errorpage.php
+ErrorDocument 504 /errorpage.php

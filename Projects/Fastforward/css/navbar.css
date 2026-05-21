@@ -1,0 +1,532 @@
+/* Second Row: Logo and Menu */
+nav.navbar {
+    background-color: white !important; /* Gawing white ang navbar */
+    border-bottom: none !important; /* Alisin ang guhit sa ilalim */
+    box-shadow: none !important; /* Siguraduhin ding walang shadow */
+}
+
+.navbar .navbar-nav .nav-link {
+    color: black !important; /* Gawing black ang text ng menu */
+}
+
+
+/* -------------------------------------HOME----------------------------------------------------------- */
+#home {
+    margin-top: 100px; /* Adjust based on the height of your header */
+    height: calc(100vh - 88px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+/* White left section */
+.left-section {
+    position: absolute;
+    left: 0;
+    top: 0; /* Inangat para sumakto */
+    width: 10%;
+    height: 100%; /* Buong taas na */
+    background: white;
+    border-top-left-radius: 50px;
+    z-index: 2;
+}
+/* Apply animation to the background */
+.right-section {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 50px;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInBackground 2s ease-in-out forwards;
+    transition: background-image 1s ease-in-out;
+}
+.green-box {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 35%;
+    height: 30%;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 3;
+    text-align: left;
+    padding: 40px;
+    
+    /* Animation for sliding */
+    animation: slideInRight 1.5s ease-out;
+}
+.gray-box {
+    position: absolute;
+    bottom: 0;
+    right: 0; /* Para laging dikit sa kanan */
+    width: 90%; /* 90% width */
+    background-color: rgba(128, 128, 128, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    z-index: 3;
+    border-top-left-radius: 20px; /* Para sa rounded corner */
+    
+    /* Animation */
+    transform: translateX(10%); /* Mag-uumpisa ng kaunti sa kanan */
+    animation: slideLeft 1.5s ease-out forwards;
+}
+/* -------------------------------------HOME----------------------------------------------------------- */
+
+
+/* -------------------------------------ABOUT----------------------------------------------------------- */
+#about {
+    min-height: 100vh;
+    display: flex;
+    background: linear-gradient(to right, #ffffff, #b2eab2);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column; /* important for mobile stacking */
+}
+.about-container {
+    margin-top: 50px;
+    padding: 50px;
+}
+/* -------------------------------------ABOUT----------------------------------------------------------- */
+
+
+
+/* -------------------------------------SERVICES----------------------------------------------------------- */
+#services {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, #ffffff, #b2eab2);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.services-container {
+    margin-top: 50px;
+    padding: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.timeline-icon {
+    background-color: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    border: 3px solid #fff;
+    flex-shrink: 0;
+    margin: 0 20px;
+    perspective: 1000px;
+}
+
+.timeline-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.timeline-icon:hover img,
+.timeline-item:has(.timeline-content:hover) .timeline-icon img {
+    transform: rotateY(180deg);
+}
+
+.timeline-content {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.timeline-content h4 {
+    margin-bottom: 15px;
+}
+
+/* -------------------------------------SERVICES----------------------------------------------------------- */
+
+
+/* -------------------------------------TEAM----------------------------------------------------------- */
+/* Full-width image styling */
+.team-image-fullwidth img {
+    width: 95%;
+    height: auto;
+    display: block;
+    margin-top: 10px; /* Optional: space above the image */
+}
+.team-how-we-work {
+    padding: 0; /* no padding here */
+    margin-top: 40%;
+}
+
+.how-we-work-container {
+    padding:20px;
+}
+
+.how-we-work-header {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2e7d32;
+}
+
+.incoterms-header {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+.incoterms-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+
+.green-line-animated {
+    height: 5px;
+    width: 0;
+    background-color: #4CAF50;
+    animation: stretchLine 5s infinite;
+    margin-bottom: 10px;
+}
+
+.team-gray-box {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 90%;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Background layer */
+.gray-box-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.942);
+    z-index: 0;
+}
+
+/* Text wrapper with higher z-index */
+.gray-box-text {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding-left: 20%;
+}
+
+/* Green box styles */
+.team-green-box {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    background-color: #4CAF50; /* Green color */
+    z-index: 1;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in the height */
+    color: rgb(0, 0, 0); /* Ensure text is black */
+    overflow: hidden; /* Prevent text overflow */
+}
+
+.green-box-header {
+    font-size: 1.8em; /* Slightly larger font size for the header */
+    margin-bottom: 10px; /* Space between header and text */
+    font-weight: bold; /* Make header bold */
+}
+
+.green-box-text {
+    font-size: 1.1em; /* Regular font size for text */
+    line-height: 1.6; /* Spacing between lines for readability */
+    margin: 0; /* Remove default margins */
+}
+
+/* Team section styles */
+.team-section {
+    background: linear-gradient(to right, #ffffff, #b2eab2);
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.team-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+.team-image {
+    flex: 0 0 40%;
+    position: relative;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%);
+}
+
+.team-content {
+    flex: 0 0 60%;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.team-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.team-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .team-image,
+    .team-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .team-image img {
+        height: auto;
+    }
+
+    .team-green-box {
+        top: 0; /* Remove the top offset to make it more adaptable */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .green-box-header {
+        font-size: 1.5em; /* Adjust the header size for smaller screens */
+        margin-bottom: 8px;
+    }
+
+    .green-box-text {
+        font-size: 1em; /* Adjust text size for smaller screens */
+    }
+}
+
+
+/* -------------------------------------TEAM----------------------------------------------------------- */
+
+
+/* -------------------------------------LAST SECTION----------------------------------------------------------- */
+
+/* Footer Section Styling */
+.footer-section {
+    background: linear-gradient(to right, #ffffff, #b2eab2);
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Container to hold the footer content */
+.footer-container {
+    display: flex;
+    justify-content: space-between;  /* Space between logo and image */
+    align-items: center;  /* Align items vertically in the center */
+    max-width: 1200px;  /* Limit container width */
+    margin: 0 auto;  /* Center the footer */
+    padding: 0 20px;
+}
+
+/* Left logo styling */
+.footer-logo img {
+    width: 500px;  /* Increased width by 45% from 200px */
+    height: auto;
+    display: block;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;  /* Stack logo and image vertically */
+        align-items: center;  /* Center the items */
+    }
+
+    .footer-logo img,
+    .footer-image img {
+        width: 100%;  /* Make the images responsive */
+        max-width: 300px;  /* Limit max width */
+        margin-bottom: 10px;  /* Add some space between images */
+    }
+}
+/* -------------------------------------LAST SECTION----------------------------------------------------------- */
+
+/* -------------------------------------FOOTER----------------------------------------------------------- */
+footer {
+    background: linear-gradient(to right, #ffffff, #b2eab2);
+    margin-top: auto;
+}
+
+.footer-box {
+    background-color: green; /* Green box background */
+    color: white;
+    padding: 1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+/* -------------------------------------FOOTER----------------------------------------------------------- */
+/* Style the floating button */
+#myBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: none; /* Hidden by default */
+  }
+  
+  /* Show the button when scrolled down 20px */
+  #myBtn.show {
+    display: block;
+  }
+
+
+@keyframes stretchLine {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+/* Fade-in effect for the right section */
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes flipAnimation {
+    0% { transform: rotateY(0); }
+    50% { transform: rotateY(180deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .slide-in-left.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-in-down {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .slide-in-down.active {
+    opacity: 1;
+    transform: translateY(0);
+  }

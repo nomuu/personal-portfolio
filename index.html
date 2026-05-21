@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronald Fernandez Mendoza | Portfolio</title>
+    <link rel="stylesheet" href="styles/tailwind/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob { animation: blob 7s infinite; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+        
+        .glass {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #car-container canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 99999 !important;
+            pointer-events: none !important;
+        }
+    </style>
+    <script type="importmap">
+    {
+        "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body class="bg-slate-950 text-white font-sans overflow-x-hidden">
+
+    <div class="fixed top-0 -left-4 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
+    <div class="fixed top-0 -right-4 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
+    <div class="fixed -bottom-8 left-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-4000"></div>
+
+    <nav class="fixed top-0 w-full glass z-50">
+        <div class="p-6 flex justify-between items-center max-w-6xl mx-auto">
+            <div class="text-2xl font-black tracking-tighter bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                RFM<span class="text-white">.</span>
+            </div>
+            
+            <div class="space-x-8 hidden md:flex text-xs font-bold uppercase tracking-widest">
+                <a href="#home" class="hover:text-blue-400 transition-all">Home</a>
+                <a href="#about" class="hover:text-blue-400 transition-all">About</a>
+                <a href="#skills" class="hover:text-blue-400 transition-all">Skills</a>
+                <a href="#projects" class="hover:text-blue-400 transition-all">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition-all">Contact</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-2xl text-slate-300 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden glass absolute w-full left-0 transition-all duration-300">
+            <div class="flex flex-col space-y-4 p-6 text-center font-bold uppercase tracking-widest text-sm">
+                <a href="#home" class="mobile-link py-2 hover:text-blue-400">Home</a>
+                <a href="#about" class="mobile-link py-2 hover:text-blue-400">About</a>
+                <a href="#skills" class="mobile-link py-2 hover:text-blue-400">Skills</a>
+                <a href="#projects" class="mobile-link py-2 hover:text-blue-400">Projects</a>
+                <a href="#contact" class="mobile-link py-2 hover:text-blue-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative min-h-screen flex flex-col justify-center items-center px-6 text-center pt-20">
+        <div class="mb-10 relative">
+            <div class="absolute inset-0 bg-blue-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+            <img src="img/profile.webp" alt="Profile" 
+                class="w-40 h-40 md:w-48 md:h-48 rounded-2xl border-2 border-white/20 object-cover relative z-10 shadow-2xl transition-all duration-500 hover:scale-105">
+        </div>
+        
+        <h1 class="text-3xl md:text-5xl font-black mb-4 tracking-tighter">
+            <span id="home-name" class="bg-gradient-to-r from-white via-blue-100 to-slate-500 bg-clip-text text-transparent uppercase">
+                </span>
+        </h1>
+        
+        <p id="home-professions" class="text-blue-500 text-sm md:text-lg font-bold mb-8 tracking-[0.2em] md:tracking-[0.3em] uppercase opacity-80">
+            </p>
+
+        <p id="home-slogan" class="max-w-xl text-slate-400 text-md leading-relaxed mb-12 italic border-l-2 border-blue-500/50 pl-6 py-2 bg-blue-500/5 mx-auto">
+            </p>
+
+        <div id="home-socials" class="flex space-x-8 text-2xl">
+            </div>
+    </section>
+    
+    <section id="about" class="min-h-screen py-24 relative overflow-hidden">
+        <div class="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-blue-600/10 blur-[120px] -z-10"></div>
+
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-black mb-16 flex items-center tracking-tighter uppercase">
+                <span class="text-blue-600 mr-4">01.</span> About Me
+                <div class="h-[1px] bg-slate-800 flex-grow ml-8"></div>
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-12 text-slate-300 leading-relaxed text-lg">
+                <div class="md:col-span-2 space-y-8">
+                    <p id="about-main" class="first-letter:text-6xl first-letter:font-bold first-letter:text-blue-500 first-letter:mr-4 first-letter:float-left first-letter:leading-none">
+                    </p>
+                    
+                    <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 backdrop-blur-sm">
+                        <p id="about-additional"></p>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <div class="border-l border-slate-800 pl-8 py-2">
+                        <h3 class="text-white font-black mb-6 text-xl uppercase tracking-widest italic opacity-50 group-hover:opacity-100 transition-opacity">
+                            Beyond the Code
+                        </h3>
+                        <ul id="about-list" class="space-y-6 text-sm">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="min-h-screen py-24 bg-slate-900/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-black mb-16 flex items-center tracking-tighter uppercase">
+                <span class="text-blue-600 mr-4">02.</span> Skills
+                <div class="h-[1px] bg-slate-800 flex-grow ml-8"></div>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-12">
+                <div class="space-y-8">
+                    <h3 class="text-xl font-bold text-white flex items-center italic uppercase tracking-widest">
+                        <i class="fas fa-code text-blue-500 mr-4"></i> Technical Stack
+                    </h3>
+                    <div id="tech-stack-container" class="grid grid-cols-2 gap-6">
+                        </div>
+                </div>
+
+                <div class="space-y-8">
+                    <h3 class="text-xl font-bold text-white flex items-center italic uppercase tracking-widest">
+                        <i class="fas fa-brain text-blue-500 mr-4"></i> Core Strengths
+                    </h3>
+                    <div id="core-strengths-container" class="space-y-6">
+                        </div>
+                </div>
+            </div>
+
+            <div class="glass p-10 rounded-3xl border-blue-500/20 bg-blue-500/5 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <i class="fas fa-chart-line text-8xl text-blue-500"></i>
+                </div>
+                <div class="max-w-3xl">
+                    <h3 class="text-xl font-bold text-white flex items-center italic uppercase tracking-widest mb-6">
+                        <i class="fas fa-graduation-cap text-blue-500 mr-4"></i> Professional Development
+                    </h3>
+                    <ul id="prof-dev-list" class="space-y-4 text-slate-400 text-md leading-relaxed">
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="min-h-screen py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-black mb-16 flex items-center tracking-tighter uppercase text-white">
+                <span class="text-blue-600 mr-4">03.</span> Projects
+                <div class="h-[1px] bg-slate-800 flex-grow ml-8"></div>
+            </h2>
+
+            <div id="featured-projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-slate-500 text-xs font-bold uppercase tracking-[0.3em] mb-6 flex items-center">
+                    More Projects <span class="h-[1px] bg-slate-800 w-12 ml-4"></span>
+                </h3>
+
+                <div id="other-projects-container" class="space-y-4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="min-h-screen py-24 glass rounded-t-[100px] mt-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-black mb-16 flex items-center tracking-tighter uppercase">
+                <span class="text-blue-600 mr-4">04.</span> Contact
+                <div class="h-[1px] bg-slate-800 flex-grow ml-8"></div>
+            </h2>
+
+            <div class="grid lg:grid-cols-2 gap-20">
+                <div class="space-y-8">
+                    <h3 id="contact-greeting" class="text-3xl font-black tracking-tight uppercase"></h3>
+                    <p id="contact-description" class="text-slate-400 text-xl leading-relaxed font-light"></p>
+                    
+                    <div class="pt-8 space-y-6">
+                        <div class="flex items-center group">
+                            <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-blue-500 mr-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Email Me</p>
+                                <a id="contact-email-link" href="" class="text-white font-bold hover:text-blue-400 transition-colors"></a>
+                            </div>
+                        </div>
+                        <div class="flex items-center group">
+                            <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-blue-500 mr-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Location</p>
+                                <p id="contact-location" class="text-white font-bold"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass p-10 rounded-3xl border-white/5 space-y-8">
+                    <h4 class="text-xl font-black uppercase italic tracking-tighter text-white">Communication</h4>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Languages</p>
+                            <p id="contact-languages" class="text-white font-bold"></p>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">Socials</p>
+                            <div id="contact-socials" class="flex space-x-4">
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-600 text-xs font-bold uppercase tracking-[0.3em]">
+        <p>&copy; 2026 Ronald Fernandez Mendoza. All Rights Reserved.</p>
+    </footer>
+    
+<button id="back-to-top" 
+    style="position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%); z-index: 9999; display: none;"
+    class="glass w-20 h-20 rounded-2xl flex flex-col items-center justify-center text-blue-500 border border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300 hover:scale-110 hover:bg-blue-600/20 hover:text-white group">
+    
+    <i class="fas fa-chevron-up text-xl mb-1 group-hover:-translate-y-1 transition-transform"></i>
+    
+    <span class="text-[10px] font-black uppercase tracking-tighter leading-none">
+        Back To Top
+    </span>
+</button>
+
+
+    <div id="car-container" class="fixed inset-0 z-[9999] pointer-events-none"></div>
+    
+    <script src="script/section-home.js"></script>
+    <script src="script/section-about.js"></script>
+    <script src="script/section-skills.js"></script>
+    <script src="script/section-projects.js"></script>
+    <script src="script/section-contact.js"></script>
+    <script src="script/car.js" type="module"></script>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+        
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            // 200px lang para makita mo agad pag-scroll mo
+            if (window.scrollY > 200) {
+                backToTopBtn.style.display = 'flex';
+                // Konting delay para sa transition kung gusto mo
+                setTimeout(() => {
+                    backToTopBtn.style.opacity = '1';
+                }, 10);
+            } else {
+                backToTopBtn.style.opacity = '0';
+                backToTopBtn.style.display = 'none';
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

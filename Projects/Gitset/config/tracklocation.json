@@ -1,0 +1,26 @@
+[
+    {
+        "label":"Carpet (Indoor)",
+        "value":"Carpet"
+    },
+    {
+        "label":"Asphalt (Outdoor)",
+        "value":"Asphalt"
+    },
+    {
+        "label":"Concrete",
+        "value":"Concrete"
+    },
+    {
+        "label":"Clay",
+        "value":"Clay"
+    },
+    {
+        "label":"Dirt / Loose",
+        "value":"Dirt"
+    },
+    {
+        "label":"Grass / AstroTurf",
+        "value":"Grass"
+    }
+]

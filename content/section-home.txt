@@ -1,0 +1,10 @@
+{
+  "name": "Ronald Fernandez Mendoza",
+  "professions": ["Full Stack Developer", "Software Engineer", "Application Developer"],
+  "slogan": "I love programming in different languages and always look for ways to improve my skills and learn new things.",
+  "socials": [
+    { "platform": "facebook", "url": "https://facebook.com/446046595495367", "icon": "fab fa-facebook" },
+    { "platform": "linkedin", "url": "https://linkedin.com/in/imronaldmendoza", "icon": "fab fa-linkedin" },
+    { "platform": "github", "url": "https://github.com/nomuu", "icon": "fab fa-github" }
+  ]
+}

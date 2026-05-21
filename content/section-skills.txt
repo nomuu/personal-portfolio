@@ -1,0 +1,20 @@
+{
+  "techStack": [
+    { "category": "LANGUAGES", "skills": "C#, HTML, CSS, JS, SQL" },
+    { "category": "FRAMEWORKS", "skills": ".NET, ASP.NET, Bootstrap" },
+    { "category": "DATABASES", "skills": "SQL Server, MySQL, Postgre" },
+    { "category": "TOOLS & CLOUD", "skills": "Git, VS 2022, Azure (SSO)" },
+    { "category": "RPA / AI", "skills": "UiPath, OCR, DU, APIs" },
+    { "category": "SITE ADMIN", "skills": "Security, Server Mgmt" }
+  ],
+  "coreStrengths": [
+    { "name": "Problem Solving & Debugging", "percentage": 95 },
+    { "name": "Responsive Web Design", "percentage": 100 },
+    { "name": "Web Security Integration", "percentage": 90 },
+    { "name": "Full-Stack Portal Development", "percentage": 85 }
+  ],
+  "professionalDevelopment": [
+    "Continuously exploring backend improvements and cloud integration (Azure, APIs).",
+    "Currently studying advanced .NET Core and API design patterns to build more scalable enterprise solutions."
+  ]
+}

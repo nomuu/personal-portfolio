@@ -1,0 +1,65 @@
+        body {
+            background: linear-gradient(to right, #f9f7f7, #e3f2fd);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .scrapify-brand {
+            font-weight: 700;
+            color: #5a189a;
+        }
+
+        .card {
+            border-radius: 16px;
+            border: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            background-color: #fff;
+        }
+
+        input.form-control,
+        select.form-select {
+            border-radius: 10px;
+            padding: 0.6rem 1rem;
+            font-size: 0.95rem;
+        }
+
+        button.btn {
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: #5a189a;
+            border-color: #5a189a;
+        }
+
+        .btn-primary:hover {
+            background-color: #3c096c;
+        }
+
+        .table th,
+        .table td {
+            vertical-align: middle;
+            font-size: 0.9rem;
+        }
+
+        .table thead th {
+            background-color: #5a189a;
+            color: #fff;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .lead {
+            color: #444;
+        }
+
+        .table-container {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }

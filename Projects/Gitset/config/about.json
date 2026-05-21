@@ -1,0 +1,20 @@
+[
+    {
+        "id": "01",
+        "title": "Winning Consistency",
+        "description": "No more guessing. GitSet provides RC racers a standardized way to document winning setups. By tracking every tweak, you can easily revert to winning configurations or adapt quickly to changing track conditions.",
+        "bg": "bg-gray-50"
+    },
+    {
+        "id": "02",
+        "title": "Portable Pit Data",
+        "description": "Carry your setup as a lightweight text file. Just upload, view, and adjust—anytime, anywhere. No bulky software or unreliable cloud apps needed at the pit area.",
+        "bg": "bg-white"
+    },
+    {
+        "id": "03",
+        "title": "Encrypted Privacy",
+        "description": "Winning setups are trade secrets. GitSet keeps your data entirely client-side with Base64 encryption. No servers, no tracking—just pure performance stored right in your pocket.",
+        "bg": "bg-gray-50"
+    }
+]

@@ -1,0 +1,95 @@
+[01-Jun-2025 14:29:20 UTC] PHP Fatal error:  Uncaught TypeError: htmlspecialchars(): Argument #1 ($string) must be of type string, array given in /home/z04fl6wg5ng7/public_html/Projects/Mockify/finish.php:30
+Stack trace:
+#0 /home/z04fl6wg5ng7/public_html/Projects/Mockify/finish.php(30): htmlspecialchars()
+#1 {main}
+  thrown in /home/z04fl6wg5ng7/public_html/Projects/Mockify/finish.php on line 30
+[01-Jun-2025 15:33:58 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 15:33:58 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 15:38:25 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 15:38:25 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 15:38:30 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 15:38:30 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 15:38:43 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 15:38:43 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 15:39:36 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 15:39:36 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 15:40:10 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 15:40:10 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 15:41:09 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 15:41:09 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 15:46:57 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 15:46:57 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 15:50:37 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 15:50:37 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 15:52:52 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 15:52:52 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 15:55:41 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 15:55:41 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:07:32 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:07:32 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:10:19 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:10:19 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:15:23 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:15:23 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:16:52 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:16:52 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:17:26 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:17:26 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:22:09 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:22:09 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:23:34 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:23:34 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:25:00 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:25:00 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:27:26 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:27:26 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:27:58 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:27:58 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:29:20 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:29:20 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:30:17 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:30:17 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:36:48 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:36:48 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:39:09 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:39:09 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:40:09 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:40:09 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:41:40 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:41:40 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:42:26 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:42:26 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:43:55 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:43:55 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:46:04 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:46:04 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:47:53 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:47:53 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 16:49:33 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 16:49:33 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 17:04:11 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 17:04:11 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[01-Jun-2025 23:51:47 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[01-Jun-2025 23:51:47 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[02-Jun-2025 01:30:34 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[02-Jun-2025 01:30:34 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[02-Jun-2025 01:42:20 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[02-Jun-2025 01:42:20 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[02-Jun-2025 01:45:24 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[02-Jun-2025 01:45:24 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[02-Jun-2025 01:48:56 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[02-Jun-2025 01:48:56 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[02-Jun-2025 01:50:15 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[02-Jun-2025 01:50:15 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[02-Jun-2025 01:52:05 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[02-Jun-2025 01:52:05 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[02-Jun-2025 01:53:45 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 91
+[02-Jun-2025 01:53:45 UTC] PHP Warning:  Undefined variable $user_name in /home/z04fl6wg5ng7/public_html/Projects/Mockify/instruction.php on line 105
+[02-Jun-2025 09:06:52 UTC] PHP Warning:  Undefined array key "user_name" in /home/z04fl6wg5ng7/public_html/Projects/Mockify/setup.php on line 47
+[02-Jun-2025 09:08:48 UTC] PHP Warning:  Undefined array key "user_name" in /home/z04fl6wg5ng7/public_html/Projects/Mockify/setup.php on line 47
+[02-Jun-2025 09:09:29 UTC] PHP Warning:  Undefined array key "user_name" in /home/z04fl6wg5ng7/public_html/Projects/Mockify/setup.php on line 46
+[02-Jun-2025 11:49:15 UTC] PHP Warning:  Undefined array key "user_name" in /home/z04fl6wg5ng7/public_html/Projects/Mockify/setup.php on line 46
+[02-Jun-2025 12:53:17 UTC] PHP Warning:  Undefined array key "user_name" in /home/z04fl6wg5ng7/public_html/Projects/Mockify/setup.php on line 46
+[02-Jun-2025 12:55:44 UTC] PHP Warning:  Undefined array key "user_name" in /home/z04fl6wg5ng7/public_html/Projects/Mockify/setup.php on line 46
+[02-Jun-2025 12:59:20 UTC] PHP Warning:  Undefined array key "user_name" in /home/z04fl6wg5ng7/public_html/Projects/Mockify/setup.php on line 46
+[02-Jun-2025 13:14:22 UTC] PHP Warning:  Undefined array key "user_name" in /home/z04fl6wg5ng7/public_html/Projects/Mockify/setup.php on line 46

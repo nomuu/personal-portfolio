@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitSet | RC Setup Version Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/analysis.js"></script>
+    <script src="js/fileHandler.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+        body { font-family: 'JetBrains+Mono', monospace; }
+        input, select { background: transparent; border-bottom: 2px solid #000; outline: none; transition: all 0.2s; width: 100%; }
+        input:focus { border-bottom: 3px solid #2563eb; background: #f1f5f9; }
+        .btn-brutal { border: 2px solid black; font-weight: 800; text-transform: uppercase; font-style: italic; transition: all 0.1s; box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+        .btn-brutal:hover { box-shadow: 2px 2px 0px 0px rgba(0,0,0,1); transform: translate(2px, 2px); }
+        .btn-brutal:active { box-shadow: none; transform: translate(4px, 4px); }
+        .section-title { background: #000; color: #fff; padding: 2px 8px; font-style: italic; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px; }
+        
+        #modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
+        .modal-box { background: white; border: 4px solid black; padding: 30px; max-width: 400px; width: 100%; box-shadow: 10px 10px 0px 0px #2563eb; }
+
+        #ai-assessment { display: none; }
+
+        @media print {
+            body { background: white !important; padding: 0 !important; color: black !important; }
+            #main-container { box-shadow: none !important; border: none !important; padding: 0 !important; max-width: 100% !important; }
+            .no-print { display: none !important; }
+            header { border-bottom: 3px solid black !important; margin-bottom: 1.5rem !important; }
+            input, select { border-bottom: 1px solid black !important; font-size: 10px !important; color: black !important; opacity: 1 !important; }
+            input:disabled { color: black !important; opacity: 1 !important; }
+            #ai-assessment { display: block !important; border: 2px solid black !important; background: white !important; }
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-black p-4 md:p-8 text-xs md:text-sm">
+
+    <div id="modal-overlay" class="no-print">
+        <div class="modal-box text-center">
+            <div id="modal-icon" class="text-4xl mb-4">🚀</div>
+            <h3 id="modal-title" class="text-xl font-black italic uppercase mb-2">System_Message</h3>
+            <p id="modal-text" class="text-xs font-bold text-gray-600 mb-6 tracking-tight"></p>
+            <div id="modal-footer" class="flex gap-2">
+                <button id="modal-close-btn" onclick="closeModal()" class="btn-brutal bg-black text-white px-8 py-2 w-full italic">Acknowledge</button>
+                <button id="modal-fb-btn" class="hidden btn-brutal bg-[#1877F2] text-white px-8 py-2 w-full italic">Proceed to FB</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-container" class="max-w-6xl mx-auto bg-white border-4 border-black p-5 md:p-10 shadow-[10px_10px_0px_0px_rgba(37,99,235,1)]">
+        
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-end border-b-4 border-black pb-4 mb-8">
+            <div>
+                <h1 class="text-4xl md:text-6xl font-black italic tracking-tighter text-blue-600">GITSET<span class="text-black text-lg md:text-xl not-italic ml-2 font-mono uppercase tracking-widest no-print">v1.4.3</span></h1>
+                <p class="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-gray-600 mt-1">Advanced RC Chassis Configuration Sheet</p>
+            </div>
+            <div class="flex flex-col items-start md:items-end gap-3 mt-6 md:mt-0 no-print w-full md:w-auto">
+                <input type="file" id="uploadFile" class="hidden" accept=".txt" onchange="loadSheet(this)">
+                <button onclick="document.getElementById('uploadFile').click()" class="btn-brutal bg-white text-black text-[10px] px-4 py-2 w-full md:w-auto">Load_Config</button>
+            </div>
+        </header>
+
+        <form id="gitSetForm" class="space-y-12" oninput="updateAIAnalysis()">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 bg-gray-50 p-5 border border-black text-[10px] uppercase font-black">
+                <div class="flex flex-col"><label class="text-gray-500">Driver_ID</label><input type="text" name="driverName" class="p-1 text-sm font-bold"></div>
+                <div class="flex flex-col"><label class="text-gray-500">Chassis_Model</label><select name="chassis" id="chassisSelect" class="p-1 text-sm font-bold text-blue-700 uppercase"></select></div>
+                <div class="flex flex-col"><label class="text-gray-500">Track_Location</label><select name="track" id="trackSelect" class="p-1 text-sm font-bold uppercase"></select></div>
+                <div class="flex flex-col"><label class="text-gray-500">Commit_Date (Auto)</label><input type="text" id="displayDate" name="date" readonly class="p-1 text-sm border-none font-bold text-gray-400"></div>
+            </div>
+
+            <section>
+                <div class="section-title mb-4 inline-block text-lg">01_CORE_CHASSIS</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4 border-2 border-black">
+                        <div class="space-y-3">
+                            <label class="block text-[10px] font-bold text-gray-400">WHEELBASE</label>
+                            <select name="wheelbase" id="wbSelect" class="text-sm font-bold"></select>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="block text-[10px] font-bold text-gray-400">BODY_SHELL</label>
+                            <input type="text" name="bodyShell" placeholder="e.g. Bittydesign / Tamiya">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 p-4 border-2 border-black bg-gray-50">
+                        <div class="space-y-3"><label class="block text-[9px] font-black text-blue-600 uppercase">FRONT_TIRE</label><select name="f_tires" id="fTireSelect" class="text-xs font-bold bg-white"></select></div>
+                        <div class="space-y-3"><label class="block text-[9px] font-black text-blue-600 uppercase">REAR_TIRE</label><select name="r_tires" id="rTireSelect" class="text-xs font-bold bg-white"></select></div>
+                        <div class="space-y-3"><label class="block text-[9px] font-black text-gray-500 uppercase">FRONT_INSERT</label><select name="f_inserts" id="fInsertSelect" class="text-xs font-bold bg-white"></select></div>
+                        <div class="space-y-3"><label class="block text-[9px] font-black text-gray-500 uppercase">REAR_INSERT</label><select name="r_inserts" id="rInsertSelect" class="text-xs font-bold bg-white"></select></div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-[11px] font-bold uppercase">
+                <div class="border-l-4 border-blue-600 pl-4">
+                    <h2 class="text-lg font-black italic mb-6 flex items-center"><span class="bg-blue-600 text-white px-2 mr-2 text-sm">02</span> FRONT_END_SPEC</h2>
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-4">
+                        <div class="flex flex-col"><label class="text-gray-400">Camber</label><input type="text" name="f_camber"></div>
+                        <div class="flex flex-col"><label class="text-gray-400">Toe</label><input type="text" name="f_toe"></div>
+                        <div class="flex flex-col"><label class="text-gray-400">Ride_Height</label><input type="text" name="f_height"></div>
+                        <div class="flex flex-col"><label class="text-gray-400">Droop</label><input type="text" name="f_droop"></div>
+                        <div class="col-span-2 mt-2 bg-gray-100 p-2 border-t border-black italic">SHOCK_SET</div>
+                        <div class="flex flex-col"><label class="text-gray-400">Oil</label><input type="text" name="f_oil"></div>
+                        <div class="flex flex-col"><label class="text-gray-400">Spring</label><input type="text" name="f_spring"></div>
+                    </div>
+                </div>
+                <div class="border-l-4 border-black pl-4">
+                    <h2 class="text-lg font-black italic mb-6 flex items-center"><span class="bg-black text-white px-2 mr-2 text-sm">03</span> REAR_END_SPEC</h2>
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-4">
+                        <div class="flex flex-col"><label class="text-gray-400">Camber</label><input type="text" name="r_camber"></div>
+                        <div class="flex flex-col"><label class="text-gray-400">Toe</label><input type="text" name="r_toe"></div>
+                        <div class="flex flex-col"><label class="text-gray-400">Ride_Height</label><input type="text" name="r_height"></div>
+                        <div class="flex flex-col"><label class="text-gray-400">Droop</label><input type="text" name="r_droop"></div>
+                        <div class="col-span-2 mt-2 bg-gray-100 p-2 border-t border-black italic">SHOCK_SET</div>
+                        <div class="flex flex-col"><label class="text-gray-400">Oil</label><input type="text" name="r_oil"></div>
+                        <div class="flex flex-col"><label class="text-gray-400">Spring</label><input type="text" name="r_spring"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-black text-white p-8 border-4 border-blue-600">
+                <h2 class="text-xl font-black italic tracking-tighter mb-8">04_ELECTRONICS_&_DRIVE</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="flex flex-col"><label class="text-[9px] text-blue-400 font-bold">MOTOR</label><input type="text" name="motor" class="border-gray-700 text-white text-sm"></div>
+                    <div class="flex flex-col"><label class="text-[9px] text-blue-400 font-bold">GEARING</label><input type="text" name="gearing" class="border-gray-700 text-white text-sm"></div>
+                    <div class="flex flex-col"><label class="text-[9px] text-blue-400 font-bold">ESC</label><input type="text" name="esc" class="border-gray-700 text-white text-sm"></div>
+                    <div class="flex flex-col"><label class="text-[9px] text-blue-400 font-bold">SERVO</label><input type="text" name="servo" class="border-gray-700 text-white text-sm"></div>
+                    <div class="flex flex-col"><label class="text-[9px] text-blue-400 font-bold">BATTERY</label><select name="battery" id="batterySelect" class="border-gray-700 text-white text-sm bg-black"></select></div>
+                    <div class="flex flex-col"><label class="text-[9px] text-blue-400 font-bold">DIFF</label><input type="text" name="diff" class="border-gray-700 text-white text-sm"></div>
+                    <div class="flex flex-col md:col-span-2"><label class="text-[9px] text-blue-400 font-bold">RADIO</label><input type="text" name="radio" class="border-gray-700 text-white text-sm"></div>
+                </div>
+            </div>
+
+            <section id="ai-assessment" class="border-4 border-blue-600 p-6 bg-blue-50 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-blue-600 text-white px-4 py-1 text-[10px] font-black uppercase tracking-widest no-print">AI_Analytical_Engine</div>
+                <h2 class="text-2xl font-black italic uppercase mb-6 tracking-tighter">Setup_Assessment</h2>
+                <div class="space-y-8">
+                    <div><h4 class="text-[10px] font-black text-blue-600 uppercase mb-2">Analysis_Verdict</h4><p id="ai-verdict" class="text-sm font-bold leading-tight italic text-gray-800"></p></div>
+                    <div><h4 class="text-[10px] font-black text-green-600 uppercase mb-2">Competitive_Advantages</h4><ul id="ai-pros" class="text-[11px] font-bold list-disc list-inside space-y-1"></ul></div>
+                    <div><h4 class="text-[10px] font-black text-red-600 uppercase mb-2">Stability_Risks</h4><ul id="ai-cons" class="text-[11px] font-bold list-disc list-inside space-y-1"></ul></div>
+                </div>
+            </section>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t-2 border-dashed border-gray-400 no-print">
+                <p class="text-[10px] text-blue-600 font-bold uppercase tracking-tighter italic">Encrypted Logic v1.4.3</p>
+                <div class="flex flex-wrap justify-center md:justify-end gap-4 w-full md:w-auto">
+                    <button type="button" onclick="shareToFB()" class="btn-brutal bg-[#1877F2] text-white text-xs px-6 py-3 italic w-full sm:w-auto">Share_to_Facebook</button>
+                    <button type="button" onclick="toggleAI()" class="btn-brutal bg-black text-white text-xs px-6 py-3 italic w-full sm:w-auto">Inspect_with_AI</button>
+                    <button type="button" onclick="window.print()" class="btn-brutal bg-gray-200 text-black text-xs px-6 py-3 w-full sm:w-auto">Print_PDF</button>
+                    <button type="button" onclick="downloadSheet()" class="btn-brutal bg-blue-600 text-white text-xs px-8 py-3 italic w-full sm:w-auto">Save_to_GitSet</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // MODAL LOGIC (FIXED)
+        function showSystemModal(title, text, icon = "🚀", isFB = false) {
+            const overlay = document.getElementById('modal-overlay');
+            const fbBtn = document.getElementById('modal-fb-btn');
+            const closeBtn = document.getElementById('modal-close-btn');
+            
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-text').innerText = text;
+            document.getElementById('modal-icon').innerText = icon;
+
+            if (isFB) {
+                fbBtn.classList.remove('hidden');
+                closeBtn.innerText = "Cancel";
+            } else {
+                fbBtn.classList.add('hidden');
+                closeBtn.innerText = "Acknowledge";
+            }
+            overlay.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').style.display = 'none';
+        }
+
+        function toggleAI() {
+            const aiSection = document.getElementById('ai-assessment');
+            if (aiSection.style.display === 'block') {
+                aiSection.style.display = 'none';
+            } else {
+                aiSection.style.display = 'block';
+                if (typeof updateAIAnalysis === "function") updateAIAnalysis();
+            }
+        }
+
+        function shareToFB() {
+            if (typeof updateAIAnalysis === "function") updateAIAnalysis();
+
+            const driver = document.querySelector('[name="driverName"]').value || "Racer";
+            const chassis = document.getElementById('chassisSelect').options[document.getElementById('chassisSelect').selectedIndex]?.text || "RC";
+            const verdict = document.getElementById('ai-verdict').innerText || "Ready to Race.";
+            const content = `🏁 GITSET RC SETUP COMMIT 🏁\n\nDriver: ${driver}\nChassis: ${chassis}\n\n🤖 AI VERDICT:\n"${verdict}"\n\nView Full Spec at GitSet.`;
+
+            navigator.clipboard.writeText(content).then(() => {
+                showSystemModal("Setup_Copied", "Your details are ready to paste. Proceed to Facebook?", "📋", true);
+                
+                document.getElementById('modal-fb-btn').onclick = function() {
+                    closeModal();
+                    const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+                    window.open(fbUrl, '_blank');
+                };
+            });
+        }
+
+        async function loadExternalConfigs() {
+            try {
+                const fetchJson = async (file) => {
+                    const res = await fetch(`config/${file}.json`);
+                    return res.ok ? await res.json() : null;
+                };
+
+                const [tracks, wbs, chassis, tires, inserts, batts] = await Promise.all([
+                    fetchJson('tracklocation'), fetchJson('wheelbase'), fetchJson('chassis'),
+                    fetchJson('tires'), fetchJson('inserts'), fetchJson('battery')
+                ]);
+
+                if (tracks) document.getElementById('trackSelect').innerHTML = tracks.map(t => `<option value="${t.value}">${t.label}</option>`).join('');
+                if (wbs) document.getElementById('wbSelect').innerHTML = wbs.map(w => `<option value="${w.value}">${w.label}</option>`).join('');
+                if (chassis) document.getElementById('chassisSelect').innerHTML = chassis.map(c => `<option value="${c.value}">${c.label}</option>`).join('');
+                if (tires) {
+                    const opts = tires.map(t => `<option value="${t.value}">${t.label}</option>`).join('');
+                    document.getElementById('fTireSelect').innerHTML = opts;
+                    document.getElementById('rTireSelect').innerHTML = opts;
+                }
+                if (inserts) {
+                    const opts = inserts.map(i => `<option value="${i.value}">${i.label}</option>`).join('');
+                    document.getElementById('fInsertSelect').innerHTML = opts;
+                    document.getElementById('rInsertSelect').innerHTML = opts;
+                }
+                if (batts) document.getElementById('batterySelect').innerHTML = batts.map(b => `<option value="${b.value}">${b.label}</option>`).join('');
+            } catch (e) { console.error("Config Load Error:", e); }
+        }
+
+        window.onload = function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('displayDate').value = today;
+            loadExternalConfigs();
+        };
+
+        // Override the showModal in fileHandler.js if it exists, to use our internal UI
+        window.showModal = function(title, text, icon) {
+            showSystemModal(title, text, icon, false);
+        };
+    </script>
+</body>
+</html>

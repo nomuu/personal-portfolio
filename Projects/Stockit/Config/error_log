@@ -1,0 +1,12 @@
+[27-Aug-2024 16:22:30 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Number of bind variables doesn't match number of fields in prepared statement in /home/z04fl6wg5ng7/public_html/Projects/Stockit/Config/login_process.php:48
+Stack trace:
+#0 /home/z04fl6wg5ng7/public_html/Projects/Stockit/Config/login_process.php(48): mysqli_stmt->bind_result()
+#1 {main}
+  thrown in /home/z04fl6wg5ng7/public_html/Projects/Stockit/Config/login_process.php on line 48
+[28-Aug-2024 06:46:31 UTC] PHP Warning:  include(Content/Product.php): Failed to open stream: No such file or directory in /home/z04fl6wg5ng7/public_html/Projects/Stockit/Config/Router.php on line 27
+[28-Aug-2024 06:46:31 UTC] PHP Warning:  include(): Failed opening 'Content/Product.php' for inclusion (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/z04fl6wg5ng7/public_html/Projects/Stockit/Config/Router.php on line 27
+[28-Aug-2024 07:51:50 UTC] PHP Warning:  Undefined variable $conn in /home/z04fl6wg5ng7/public_html/Projects/Stockit/Config/login_process.php on line 33
+[28-Aug-2024 07:51:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/z04fl6wg5ng7/public_html/Projects/Stockit/Config/login_process.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/z04fl6wg5ng7/public_html/Projects/Stockit/Config/login_process.php on line 33

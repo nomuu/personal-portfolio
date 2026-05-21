@@ -1,0 +1,10 @@
+body {
+    background-color: #f5f7fa;
+    /* padding-top: 70px; space for fixed navbar */
+}
+.logo {
+    max-height: 50px;
+}
+.result-table td {
+    vertical-align: middle;
+}

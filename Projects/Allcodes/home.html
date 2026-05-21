@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Codes - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            /* Gradient background animation */
+            background: linear-gradient(45deg, #DBDBDB, #85C7F2);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        #outputCard {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Typewriter effect for the header */
+        .header-animation {
+            display: inline-block;
+            overflow: hidden; /* Ensures the text doesn't overflow */
+            white-space: nowrap; /* Prevents wrapping */
+            border-right: .15em solid orange; /* Cursor effect */
+            animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: orange; }
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold header-animation">See Your Code in Numbers</h1>
+        <div class="col-lg-8 mx-auto">
+            <p class="lead mb-4">All Codes is a user-friendly tool designed to help developers and project managers easily determine the total number of lines of code within their projects. This web-based application provides an intuitive interface for selecting project directories and analyzing the code base, offering a quick way to gauge code size and complexity.</p>
+            <div class="d-flex justify-content-center mb-4">
+                <div class="input-group me-2" style="max-width: 200px;">
+                    <label class="input-group-text" for="fileType">File Type</label>
+                    <select id="fileType" class="form-select">
+                        <option value="single">Single File</option>
+                        <option value="multiple">Multiple Files</option>
+                        <option value="directory">Folder Directory</option>
+                    </select>
+                </div>
+                <div class="input-group me-2" style="max-width: 200px;">
+                    <label class="input-group-text" for="languageType">Language</label>
+                    <select id="languageType" class="form-select">
+                        <option value="vb">VB</option>
+                        <option value="js">JavaScript</option>
+                        <option value="py">Python</option>
+                        <option value="cs">C#</option>
+                        <option value="java">Java</option>
+                    </select>
+                </div>
+                <div class="input-group me-2" style="max-width: 400px;">
+                    <input type="file" id="fileInput" class="form-control custom-file-input">
+                </div>
+                <button id="countLines" class="btn btn-primary">Count Lines of Code</button>
+            </div>
+            <div id="loading" class="mt-4">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2">Processing files...</p>
+            </div>
+            <div id="outputCard" class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title" id="outputheader"></h5>
+                    <p id="output" class="card-text display-6 fw-bold"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('fileType').addEventListener('change', function() {
+            const fileInput = document.getElementById('fileInput');
+            fileInput.value = ''; // Clear the input value
+            const fileType = this.value;
+            if (fileType === 'single') {
+                fileInput.removeAttribute('multiple');
+                fileInput.removeAttribute('webkitdirectory');
+                fileInput.removeAttribute('directory');
+            } else if (fileType === 'multiple') {
+                fileInput.setAttribute('multiple', '');
+                fileInput.removeAttribute('webkitdirectory');
+                fileInput.removeAttribute('directory');
+            } else if (fileType === 'directory') {
+                fileInput.removeAttribute('multiple');
+                fileInput.setAttribute('webkitdirectory', '');
+                fileInput.setAttribute('directory', '');
+            }
+        });
+        document.getElementById('countLines').addEventListener('click', async () => {
+    const fileInput = document.getElementById('fileInput');
+    const files = fileInput.files;
+    const output = document.getElementById('output');
+    const outputheader = document.getElementById('outputheader');
+    const outputCard = document.getElementById('outputCard');
+    const loading = document.getElementById('loading');
+    const languageType = document.getElementById('languageType').value;
+
+    const fileExtensions = {
+        vb: ['.vb', '.aspx'],
+        js: ['.js'],
+        py: ['.py'],
+        cs: ['.cs'],
+        java: ['.java']
+    };
+
+    if (files.length === 0) {
+        outputheader.innerText = 'ERROR !';
+        output.innerText = 'Please select a file or directory first.';
+        outputCard.className = 'card mt-4 text-white bg-danger';
+        outputCard.style.display = 'block';
+        return;
+    }
+
+    // Show loading indicator
+    loading.style.display = 'block';
+    outputCard.style.display = 'none';
+
+    let totalLines = 0;
+    try {
+        for (let file of files) {
+            if (fileExtensions[languageType].some(ext => file.name.endsWith(ext))) {
+                const fileContent = await file.text();
+                const lines = fileContent.split('\n');
+
+                // Remove trailing empty lines
+                let i = lines.length - 1;
+                while (i >= 0 && lines[i].trim().length === 0) {
+                    i--;
+                }
+                // Keep only non-empty lines up to the last non-empty line
+                const trimmedLines = lines.slice(0, i + 1);
+                totalLines += trimmedLines.length;
+            }
+        }
+        // Format the number with commas
+        const formattedLines = totalLines.toLocaleString();
+        outputheader.innerText = 'Total Lines of Code';
+        output.innerText = formattedLines;
+        outputCard.className = 'card mt-4 text-white bg-success';
+        outputCard.style.display = 'block';
+    } catch (error) {
+        outputheader.innerText = 'Error !';
+        output.innerText = 'There is a problem in processing files.';
+        outputCard.className = 'card mt-4 text-white bg-danger';
+        outputCard.style.display = 'block';
+    } finally {
+        // Hide loading indicator
+        loading.style.display = 'none';
+    }
+});
+
+
+        // Trigger change event on page load to set the initial state
+        document.getElementById('fileType').dispatchEvent(new Event('change'));
+    </script>
+</body>
+</html>
