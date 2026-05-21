@@ -1,5 +1,0 @@
-time="2025-09-02T19:43:39-07:00" level=error msg="Error executing CLI: panel credentials not found"
-time="2025-09-02T19:43:45-07:00" level=info msg="Domain imronaldmendoza.com is now under management"
-time="2025-09-02T19:43:45-07:00" level=info msg="Starting AutoSSL process..."
-time="2025-09-02T19:43:45-07:00" level=info msg="Result[imronaldmendoza.com]"
-time="2025-09-02T19:43:45-07:00" level=info msg="AutoSSL process completed."
