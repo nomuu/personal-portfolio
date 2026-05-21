@@ -1,8 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/z04fl6wg5ng7/public_html/
-    - /usr/bin/git --git-dir=$DEPLOYPATH.git --work-tree=$DEPLOYPATH config core.filemode false
-    - /usr/bin/git --git-dir=$DEPLOYPATH.git --work-tree=$DEPLOYPATH reset --hard HEAD
-    - /usr/bin/git --git-dir=$DEPLOYPATH.git --work-tree=$DEPLOYPATH clean -fd
-    - /usr/bin/git --git-dir=$DEPLOYPATH.git --work-tree=$DEPLOYPATH checkout -f master
