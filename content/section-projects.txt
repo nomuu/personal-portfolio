@@ -3,7 +3,7 @@
     {
       "title": "Mockify",
       "description": "Prepare for real-world interviews by practicing your own questions on your terms.",
-      "url": "https://imronaldmendoza.com/Projects/Mockify/index.html",
+      "url": "https://imronaldmendoza.com/projects/Mockify",
       "icon": "fas fa-microphone-alt",
       "tags": ["AI / Career"],
       "ratingConfig": {
@@ -29,7 +29,7 @@
     {
       "title": "GitSet",
       "description": "Universal version control for RC chassis setups with encrypted data exports.",
-      "url": "https://imronaldmendoza.com/Projects/Gitset/index.html",
+      "url": "https://imronaldmendoza.com/Projects/Gitset",
       "icon": "fas fa-cogs",
       "tags": ["RC Tech / Hobby"],
       "ratingConfig": {
@@ -42,7 +42,7 @@
     {
       "title": "Inventrac",
       "description": "Platform for product monitoring and industry regulation compliance.",
-      "url": "https://imronaldmendoza.com/Projects/Inventrac/index.html",
+      "url": "https://imronaldmendoza.com/Projects/Inventrac",
       "icon": "fas fa-boxes",
       "tags": ["Inventory"],
       "ratingConfig": {
@@ -55,7 +55,7 @@
     {
       "title": "Photopify",
       "description": "Converts images locally in your browser using hardware acceleration—no uploads.",
-      "url": "https://imronaldmendoza.com/Projects/Photopify/index.html",
+      "url": "https://imronaldmendoza.com/Projects/Photopify",
       "icon": "fas fa-camera-retro",
       "tags": ["Privacy"],
       "ratingConfig": {
@@ -104,7 +104,7 @@
     {
       "title": "JSONate",
       "description": "Excel to JSON dataset converter using JavaScript.",
-      "url": "https://imronaldmendoza.com/Projects/JSONate/index.html",
+      "url": "https://imronaldmendoza.com/Projects/JSONate",
       "icon": "fas fa-database",
       "ratingConfig": { "csvUrl": "LINK_HERE", "formBaseUrl": "LINK_HERE", "entryRating": "ID_HERE", "entryRemark": "ID_HERE" }
     },
@@ -123,7 +123,7 @@
     {
       "title": "Markipify",
       "description": "Diagonal watermark security tool for media protection.",
-      "url": "https://imronaldmendoza.com/Projects/Markipify/index.html",
+      "url": "https://imronaldmendoza.com/Projects/Markipify",
       "icon": "fas fa-file-signature",
       "ratingConfig": {
         "csvUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT2JLTUt9WmGpcW69J57eKDpB-k2hwUb1Sd-Q2oxWvX3pDgYFt8NtF8E2cHy3RN0AcaZBj0HB2IaYIa/pub?output=csv",
