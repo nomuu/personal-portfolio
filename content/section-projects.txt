@@ -3,7 +3,7 @@
     {
       "title": "Mockify",
       "description": "Prepare for real-world interviews by practicing your own questions on your terms.",
-      "url": "https://imronaldmendoza.com/projects/Mockify",
+      "url": "https://mockify.imronaldmendoza.com",
       "icon": "fas fa-microphone-alt",
       "tags": ["AI / Career"],
       "ratingConfig": {
