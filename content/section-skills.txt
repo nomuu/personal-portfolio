@@ -4,7 +4,7 @@
     { "category": "FRAMEWORKS", "skills": ".NET, ASP.NET, Bootstrap" },
     { "category": "DATABASES", "skills": "SQL Server, MySQL, Postgre" },
     { "category": "TOOLS & CLOUD", "skills": "Git, VS 2022, Azure (SSO)" },
-    { "category": "RPA / AI", "skills": "UiPath, OCR, DU, APIs" },
+    { "category": "RPA / AI", "skills": "UiPath, OCR, DU, APIs, Kiro CLI" },
     { "category": "SITE ADMIN", "skills": "Security, Server Mgmt" }
   ],
   "coreStrengths": [
