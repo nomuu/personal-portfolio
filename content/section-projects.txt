@@ -42,7 +42,7 @@
     {
       "title": "Inventrac",
       "description": "Platform for product monitoring and industry regulation compliance.",
-      "url": "https://imronaldmendoza.com/Projects/Inventrac",
+      "url": "https://imronaldmendoza.com/",
       "icon": "fas fa-boxes",
       "tags": ["Inventory"],
       "ratingConfig": {
