@@ -1,2 +1,26 @@
-**/config/sso.php
+# --- Secrets / credentials ---
 .env
+.env.*
+!.env.example
+**/config/sso.php
+**/config/db.php
+**/config/db_config.php
+**/Config/db.php
+**/Config/db_config.php
+
+# --- Runtime logs (leak paths, stack traces, DB errors) ---
+error_log
+**/error_log
+*.log
+**/*.log
+**/sso_login_log.txt
+
+# --- Dependencies / build ---
+node_modules/
+.next/
+dist/
+build/
+
+# --- OS / editor junk ---
+Thumbs.db
+.DS_Store

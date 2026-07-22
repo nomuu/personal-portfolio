@@ -1,0 +1,22 @@
+# =====================================================
+#  Security hardening for Apache / cPanel hosting
+#  (Vercel ignores .htaccess; this protects the PHP host)
+# =====================================================
+
+# Disable directory browsing
+Options -Indexes
+
+# Block direct HTTP access to sensitive files.
+# NOTE: PHP `include`/`require` are server-side and are NOT
+# affected by these rules, so app config still loads fine.
+<IfModule mod_authz_core.c>
+    <FilesMatch "(?i)(^\.env$|^\.env\..+|error_log|.*\.log$|sso_login_log\.txt$|^db\.php$|^db_config\.php$|^\.git.*)">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+<IfModule !mod_authz_core.c>
+    <FilesMatch "(?i)(^\.env$|^\.env\..+|error_log|.*\.log$|sso_login_log\.txt$|^db\.php$|^db_config\.php$|^\.git.*)">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+</IfModule>
