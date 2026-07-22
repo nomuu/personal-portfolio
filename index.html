@@ -14,6 +14,9 @@
             100% { transform: translate(0px, 0px) scale(1); }
         }
         .animate-blob { animation: blob 7s infinite; }
+        @keyframes nomuos-ping {
+            75%, 100% { transform: scale(2); opacity: 0; }
+        }
         .animation-delay-2000 { animation-delay: 2s; }
         .animation-delay-4000 { animation-delay: 4s; }
         
@@ -319,6 +322,21 @@
             });
         });
     </script>
+
+    <!-- NomuOS floating CTA -->
+    <a href="https://nomuos.imronaldmendoza.com" target="_blank" rel="noopener" class="glass"
+        style="position:fixed; bottom:1.25rem; right:1.25rem; z-index:9999; display:inline-flex; align-items:center; gap:0.6rem; padding:0.55rem 0.9rem; border-radius:0.9rem; border:1px solid rgba(59,130,246,0.4); box-shadow:0 10px 30px rgba(59,130,246,0.25); max-width:80vw; text-decoration:none; transition:transform .2s ease, border-color .2s ease;"
+        onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='rgba(96,165,250,0.9)';"
+        onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(59,130,246,0.4)';">
+        <span style="position:relative; display:inline-flex; height:0.6rem; width:0.6rem; flex-shrink:0;">
+            <span style="position:absolute; display:inline-flex; height:100%; width:100%; border-radius:9999px; background:#60a5fa; opacity:.75; animation:nomuos-ping 1.5s cubic-bezier(0,0,.2,1) infinite;"></span>
+            <span style="position:relative; display:inline-flex; height:0.6rem; width:0.6rem; border-radius:9999px; background:#3b82f6;"></span>
+        </span>
+        <span style="font-size:0.75rem; font-weight:700; color:#e2e8f0; white-space:nowrap;">
+            Got bored? <span style="color:#60a5fa;">Boot this up in NomuOS</span>
+        </span>
+        <i class="fas fa-terminal" style="color:#3b82f6; flex-shrink:0;"></i>
+    </a>
 
     <!-- Vercel Web Analytics -->
     <script>
